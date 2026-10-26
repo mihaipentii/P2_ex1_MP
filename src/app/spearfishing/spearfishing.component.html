@@ -1,1 +1,73 @@
-<p>spearfishing works!</p>
+<section id="home" class="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-6 text-center">
+  <img
+    src="/img/marlin.jpg"
+    alt="Freediver holding a large marlin in deep blue water"
+    class="absolute inset-0 h-full w-full object-cover object-center">
+  <div class="absolute inset-0 bg-slate-900/60"></div>
+
+  <div class="relative max-w-3xl">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-cyan-300">
+      Freediving &amp; Spearfishing
+    </p>
+    <h1 class="mb-6 text-4xl font-extrabold text-white sm:text-6xl">
+      Hunt the Deep. <br class="hidden sm:block">Respect the Ocean.
+    </h1>
+    <p class="mb-8 text-lg text-slate-200">
+      Discover the art of sustainable spearfishing: breath-hold diving, selective
+      hunting and a deep connection with the sea.
+    </p>
+    <a
+      href="#habitats"
+      class="inline-block rounded-full bg-cyan-400 px-8 py-3 font-semibold text-slate-900 shadow-lg transition hover:scale-105 hover:bg-cyan-300">
+      Start Exploring
+    </a>
+  </div>
+</section>
+
+<section id="habitats" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <h2 class="mb-12 text-center text-3xl font-bold text-slate-900">Where to Hunt</h2>
+
+  <div class="grid gap-8 md:grid-cols-2">
+    @for (habitat of habitats; track habitat.title) {
+      <article class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+        <img [src]="habitat.image" [alt]="habitat.alt" class="h-64 w-full object-cover">
+        <div class="p-6">
+          <h3 class="mb-2 text-xl font-semibold text-slate-900">{{ habitat.title }}</h3>
+          <p class="text-slate-600">{{ habitat.text }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section id="species" class="scroll-mt-20 bg-slate-100 px-6 py-20">
+  <div class="mx-auto max-w-6xl">
+    <h2 class="mb-12 text-center text-3xl font-bold text-slate-900">What You Can Catch</h2>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      @for (item of species; track item.title) {
+        <article class="overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+          <img [src]="item.image" [alt]="item.alt" class="h-80 w-full object-cover object-top">
+          <div class="p-6">
+            <h3 class="mb-2 text-xl font-semibold text-slate-900">{{ item.title }}</h3>
+            <p class="text-slate-600">{{ item.text }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section id="safety" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <h2 class="mb-12 text-center text-3xl font-bold text-slate-900">Safety First</h2>
+
+  <div class="grid gap-8 md:grid-cols-3">
+    @for (item of safety; track item.title) {
+      <article class="rounded-2xl bg-white p-8 text-center shadow-md">
+        <div class="mb-4 text-4xl" aria-hidden="true">{{ item.icon }}</div>
+        <h3 class="mb-2 text-xl font-semibold text-slate-900">{{ item.title }}</h3>
+        <p class="text-slate-600">{{ item.text }}</p>
+      </article>
+    }
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<nav aria-label="Main navigation">
+  <ul class="flex flex-wrap items-center justify-center gap-6">
+    @for (link of links; track link.href) {
+      <li>
+        <a
+          [href]="link.href"
+          class="text-sm font-medium uppercase tracking-wide text-slate-300 transition-colors hover:text-cyan-400">
+          {{ link.label }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

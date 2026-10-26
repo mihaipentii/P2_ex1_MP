@@ -1,13 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { Header } from './header/header.component';
+import { Component } from '@angular/core';
+import { HeaderComponent } from './header/header.component';
+import { SpearfishingComponent } from './spearfishing/spearfishing.component';
+import { Footer } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [Header],
-  styleUrl: './app.css',
+  imports: [HeaderComponent, SpearfishingComponent, Footer],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('P2_ex1_MP');
-}
+export class App {}
