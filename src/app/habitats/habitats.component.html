@@ -1,0 +1,18 @@
+<section class="mx-auto max-w-6xl px-6 py-20">
+  <div class="mb-12 text-center">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600">Explore</p>
+    <h1 class="text-4xl font-bold text-slate-900">Habitats</h1>
+  </div>
+
+  <div class="grid gap-8 md:grid-cols-2">
+    @for (habitat of habitats; track habitat.title) {
+      <article class="overflow-hidden rounded-2xl bg-white shadow-lg">
+        <img [src]="habitat.image" [alt]="habitat.alt" class="h-64 w-full object-cover">
+        <div class="p-6">
+          <h2 class="mb-3 text-2xl font-semibold text-slate-900">{{ habitat.title }}</h2>
+          <p class="text-slate-600">{{ habitat.text }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="mx-auto max-w-6xl px-6 py-20">
+  <div class="mb-12 text-center">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600">Stay Safe</p>
+    <h1 class="text-4xl font-bold text-slate-900">Safety First</h1>
+  </div>
+
+  <div class="grid gap-8 md:grid-cols-3">
+    @for (item of safety; track item.title) {
+      <article class="rounded-2xl bg-white p-8 text-center shadow-lg">
+        <div class="mb-4 text-4xl" aria-hidden="true">{{ item.icon }}</div>
+        <h2 class="mb-3 text-2xl font-semibold text-slate-900">{{ item.title }}</h2>
+        <p class="text-slate-600">{{ item.text }}</p>
+      </article>
+    }
+  </div>
+</section>

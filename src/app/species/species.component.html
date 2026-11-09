@@ -1,0 +1,20 @@
+<section class="bg-slate-100 px-6 py-20">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-12 text-center">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600">Discover</p>
+      <h1 class="text-4xl font-bold text-slate-900">Species</h1>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      @for (item of species; track item.title) {
+        <article class="overflow-hidden rounded-2xl bg-white shadow-lg">
+          <img [src]="item.image" [alt]="item.alt" class="h-80 w-full object-cover object-top">
+          <div class="p-6">
+            <h2 class="mb-3 text-2xl font-semibold text-slate-900">{{ item.title }}</h2>
+            <p class="text-slate-600">{{ item.text }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
