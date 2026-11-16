@@ -1,0 +1,30 @@
+<section aria-labelledby="gallery-title" class="w-full bg-gradient-to-b from-sky-50 to-sky-100 px-4 py-16 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-10 text-center">
+      <p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-cyan-500">Gallery</p>
+      <h2 id="gallery-title" class="text-3xl font-bold text-slate-900 sm:text-4xl">Moments from the water</h2>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      @for (item of gallery; track item.title) {
+        <figure class="group overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <img
+            [src]="item.src"
+            [srcset]="item.srcset"
+            [sizes]="item.sizes"
+            [alt]="item.alt"
+            width="1200"
+            height="800"
+            loading="lazy"
+            decoding="async"
+            class="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+          <figcaption class="p-5">
+            <h3 class="mb-2 text-xl font-semibold text-slate-900">{{ item.title }}</h3>
+            <p class="text-sm leading-6 text-slate-600">{{ item.description }}</p>
+          </figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>
